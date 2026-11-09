@@ -9,7 +9,7 @@ on:
     paths: "*.py"
 
 jobs:
-  code:
+  code-linting:
     runs-on: ubuntu-latest
     # this step will automatically clone the code of the current branch into the runner
     steps:
@@ -21,5 +21,7 @@ jobs:
 #this step well install linting tool
       - name: Install Linter
         run: pip install ruff
-        
+#this step well run the linting 
+      - name: Check the files for linting
+        run: ruff check .
         
