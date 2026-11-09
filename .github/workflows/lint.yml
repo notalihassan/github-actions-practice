@@ -14,8 +14,12 @@ jobs:
     # this step will automatically clone the code of the current branch into the runner
     steps:
       - name: Check/Clone the code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         #we use uses this is the github checkout action 
         #(normally we use git clone but for github action we use this)
+
+#this step well install linting tool
+      - name: Install Linter
+        run: pip install ruff
         
         
